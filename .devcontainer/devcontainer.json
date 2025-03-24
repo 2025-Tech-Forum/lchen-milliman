@@ -1,0 +1,47 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"name": "Node.js & TypeScript",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+	"features": {
+		"ghcr.io/devcontainers/features/azure-cli:1": {	},
+		"ghcr.io/devcontainers/features/python:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
+	"customizations": {
+			"vscode": {
+				"extensions": [
+					"GitHub.copilot",
+					"GitHub.copilot-chat",
+					"ms-azuretools.vscode-azure-github-copilot",
+					"alexcvzz.vscode-sqlite",
+					"astro-build.astro-vscode",
+					"svelte.svelte-vscode",
+					"ms-python.python",
+					"ms-python.vscode-pylance"
+				]
+			}
+		},
+	"forwardPorts": [
+		4321,
+		5100,
+		5000
+	],
+	"postStartCommand": "chmod +x /workspaces/dog-shelter/scripts/start-app.sh && /workspaces/dog-shelter/scripts/start-app.sh",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "yarn install",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
